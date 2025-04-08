@@ -8,7 +8,6 @@ int main() {
     printf("Enter page reference string: ");
     for (int i = 0; i < n; i++)
         scanf("%d", &pages[i]);
-
     printf("Enter number of frames: ");
     scanf("%d", &f);
 
@@ -20,8 +19,6 @@ int main() {
     }
 
     int faults = 0, t = 0;
-
-    printf("\nGantt Chart:\n");
 
     for (int i = 0; i < n; i++) {
         int found = 0;
@@ -46,16 +43,8 @@ int main() {
             time[pos] = t++;
             faults++;
         }
-
-        for (int j = 0; j < f; j++) {
-            if (frames[j] != -1)
-                printf("| %d ", frames[j]);
-            else
-                printf("|   ");
-        }
-        printf("|\n");
     }
 
-    printf("\nTotal Page Faults: %d\n", faults);
+    printf("Total Page Faults: %d\n", faults);
     return 0;
 }
